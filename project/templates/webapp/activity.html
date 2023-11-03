@@ -1,0 +1,9 @@
+{% extends "webapp/base.html" %}
+{% load static %}
+{% block content %}
+    <!--Dic that the js-script will render in-->
+    <div id="js-framework-home"></div>
+    {{ activity_choices | json_script:'activity-choices' }}
+    <!--bundle file with the JS application logic-->
+    <script src="{%static 'js/activity.bundle.js'%}"></script>
+{% endblock content %}
